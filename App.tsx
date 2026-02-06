@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Analytics } from '@vercel/analytics/react';
 import { CartProvider } from './context/CartContext';
 import { AccountProvider } from './context/AccountContext';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -69,6 +70,7 @@ const App: React.FC = () => {
           </CartProvider>
         </AccountProvider>
       </ErrorBoundary>
+      <Analytics />
     </QueryClientProvider>
   );
 };
